@@ -1,0 +1,21 @@
+<button [disabled]="!allowButton" (click)="oncreateclick()">Add server</button>
+<input
+  type="text"
+  class="form-control"
+  (input)="updateName($event)"
+  [(ngModel)]="serverNum"
+/>
+<button
+  class="btn btn-primary"
+  [disabled]="returnName === ''"
+  (click)="print()"
+>
+  Display Name
+</button>
+<input type="text" class="form-control" [(ngModel)]="returnName" />
+<p>{{ returnNames }}</p>
+<p *ngIf="serverCreated">{{ serverCreation }}</p>
+
+<p>{{ serverNum }}</p>
+<app-server></app-server>
+<app-server></app-server>
